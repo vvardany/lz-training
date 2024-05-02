@@ -10,36 +10,37 @@ compartments_configuration:
     CMP-NETWORK-KEY:
       name: cmp-network
       description: oci-learn-lz Shared Network Compartment
+      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
     CMP-CHANNELS-KEY:
       name: cmp-channels
       description: oci-learn-lz Channels Domain dedicated Compartment
+      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
       children:
         CMP-CHANNELS-NETWORK-KEY:
           name: cmp-channels-network
-          description: oci-learn-lz Channels domain shared networking compartment
-            within the domain
+          description: oci-learn-lz Channels domain shared networking compartment within the domain
         CMP-CHANNELS-NONPROD-KEY:
           name: cmp-channels-nonprod
           description: oci-learn-lz Channels domain for non-prod environment compartment
-        CMP-CHANNELS-NONPROD-KEY:
+        CMP-CHANNELS-PROD-KEY:
           name: cmp-channels-prod
           description: oci-learn-lz Channels domain for non-prod environment compartment
-  compartments:
-    CMP-NETWORK-KEY:
+    CMP-SECURITY-KEY:
       name: cmp-security
       description: oci-learn-lz Shared Network Compartment
-    CMP-CHANNELS-KEY:
+      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
+    CMP-CORE-KEY:
       name: cmp-core
       description: oci-learn-lz Channels Domain dedicated Compartment
+      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
       children:
-        CMP-CHANNELS-NETWORK-KEY:
+        CMP-CORE-NETWORK-KEY:
           name: cmp-core-network
-          description: oci-learn-lz Channels domain shared networking compartment
-            within the domain
-        CMP-CHANNELS-NONPROD-KEY:
+          description: oci-learn-lz Channels domain shared networking compartment within the domain
+        CMP-CORE-NONPROD-KEY:
           name: cmp-core-nonprod
           description: oci-learn-lz Channels domain for non-prod environment compartment
-        CMP-CHANNELS-NONPROD-KEY:
+        CMP-CORE-NONPROD-KEY:
           name: cmp-core-prod
           description: oci-learn-lz Channels domain for non-prod environment compartment
 groups_configuration:
