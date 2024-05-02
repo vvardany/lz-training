@@ -6,15 +6,16 @@
 ---
 compartments_configuration:
   enable_delete: true
+  common_parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
   compartments:
     CMP-NETWORK-KEY:
       name: cmp-network
       description: oci-learn-lz Shared Network Compartment
-      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
+      parent_id: "${compartments_configuration.common_parent_id}"
     CMP-CHANNELS-KEY:
       name: cmp-channels
       description: oci-learn-lz Channels Domain dedicated Compartment
-      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
+      parent_id: "${compartments_configuration.common_parent_id}"
       children:
         CMP-CHANNELS-NETWORK-KEY:
           name: cmp-channels-network
@@ -28,11 +29,11 @@ compartments_configuration:
     CMP-SECURITY-KEY:
       name: cmp-security
       description: oci-learn-lz Shared Network Compartment
-      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
+      parent_id: "${compartments_configuration.common_parent_id}"
     CMP-CORE-KEY:
       name: cmp-core
       description: oci-learn-lz Channels Domain dedicated Compartment
-      parent_id: "ocid1.compartment.oc1..aaaaaaaaqo4ci4tfk44t46up2odspa23z7srrbslvgyoclyg7unudyf3ny2q"
+      parent_id: "${compartments_configuration.common_parent_id}"
       children:
         CMP-CORE-NETWORK-KEY:
           name: cmp-core-network
@@ -40,7 +41,7 @@ compartments_configuration:
         CMP-CORE-NONPROD-KEY:
           name: cmp-core-nonprod
           description: oci-learn-lz Channels domain for non-prod environment compartment
-        CMP-CORE-NONPROD-KEY:
+        CMP-CORE-PROD-KEY:
           name: cmp-core-prod
           description: oci-learn-lz Channels domain for non-prod environment compartment
 groups_configuration:
